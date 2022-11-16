@@ -16,35 +16,76 @@
 //         }
 //     }
 // }
-void PrintArray(int[,] matr) //метод для вывода матрицы
-{
+// void PrintArray(int[,] matr) //метод для вывода матрицы
+// {
 
-    for (int i = 0; i < matr.GetLength(0); i++) // конструкция выдаст длину строки (0)- обозначаются строки
-    {
-        for (int j = 0; j < matr.GetLength(1); j++) // конструкция выдаст длину столбца (1)- обозначаются столбец
-        {
-            Console.Write($"{matr[i, j]}");
-        }
-        Console.WriteLine(); //красивый вывод таблицы чисел
-    }
-}
-int[,] matrix = new int[3, 4];
-PrintArray(matrix);  
-
-void FillArray(int[,] matr) //метод для создания рандомного массива
-{
-
-    for (int i = 0; i < matr.GetLength(0); i++) // конструкция выдаст длину строки (0)- обозначаются строки
-    {
-        for (int j = 0; j < matr.GetLength(1); j++) // конструкция выдаст длину столбца (1)- обозначаются столбец
-        {
-            matr[i,j] = new Random().Next(1, 10); // новый рандомный массив от [1 до 10) 
-        }
-        Console.WriteLine(); //красивый вывод таблицы чисел
-    }
-}
+//     for (int i = 0; i < matr.GetLength(0); i++) // конструкция выдаст длину строки (0)- обозначаются строки
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++) // конструкция выдаст длину столбца (1)- обозначаются столбец
+//         {
+//             Console.Write($"{matr[i, j]}");
+//         }
+//         Console.WriteLine(); //красивый вывод таблицы чисел
+//     }
+// }
 // int[,] matrix = new int[3, 4];
-PrintArray(matrix);  // инициализируем
-Console.WriteLine(); //пустая строка для разделения массивов 
-FillArray(matrix); // заполняем
-PrintArray(matrix); // показываем уже заполненный массив
+// PrintArray(matrix);  
+
+// void FillArray(int[,] matr) //метод для создания рандомного массива
+// {
+
+//     for (int i = 0; i < matr.GetLength(0); i++) // конструкция выдаст длину строки (0)- обозначаются строки
+//     {
+//         for (int j = 0; j < matr.GetLength(1); j++) // конструкция выдаст длину столбца (1)- обозначаются столбец
+//         {
+//             matr[i,j] = new Random().Next(1, 10); // новый рандомный массив от [1 до 10) 
+//         }
+//         Console.WriteLine(); //красивый вывод таблицы чисел
+//     }
+// }
+// // int[,] matrix = new int[3, 4];
+// PrintArray(matrix);  // инициализируем
+// Console.WriteLine(); //пустая строка для разделения массивов 
+// FillArray(matrix); // заполняем
+// PrintArray(matrix); // показываем уже заполненный массив
+
+// // Задача на закрашивание нет условия, поэтому будет только начало. 
+// void PrintImage(int[,] image) //метод для вывода матрицы
+// {
+
+//     for (int i = 0; i < image.GetLength(0); i++) // конструкция выдаст длину строки (0)- обозначаются строки
+//     {
+//         for (int j = 0; j < image.GetLength(1); j++) // конструкция выдаст длину столбца (1)- обозначаются столбец
+//         {
+//             //Console.Write($"{image[i, j]}");
+//             if(image[i,j]==0) Console.Write($" "); 
+//             else Console.Write($"+");
+//         }
+//         Console.WriteLine(); //красивый вывод таблицы чисел
+//     }
+// }
+// void FillImage(int row, int col)
+// {
+//     if(pic[row, col] == 0)
+//     {
+//         pic[row, col] = 1;
+//         FillImage(row-1, col); // идем вверх ! метод который вызывает сам себя- рекурсия!
+//         FillImage(row, col-1); // идем влево
+//         FillImage(row+1, col); // идем вниз
+//         FillImage(row-1, col+1); // идем вправо
+//     }
+// }
+// PrintImage(pic);  
+// FillImage(13, 13); // точка внутри нашей области
+// PrintImage(pic); //выводим уже закрашенную область
+
+// Задача 2: Вычисление Факториала (решение рекурсией)
+
+int Factorial (int n)
+{
+    // 1! = 1
+    // 0! =1
+    if(n == 1) return 1;
+    else return n * Factorial(n-1);
+}
+Console.WriteLine(Factorial(3)); // 1*2*3 =6
